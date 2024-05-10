@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+:root{
+    --blue: #4C5FD5;
+    --light-blue: #dadbf1;
+    --black: #000000;
+    --white: #fff;
+}
+@font-face {
+    font-family: "GT America RegularH1";
+    src: url(src/fonts/GT-America/GT-America-Extended-Regular-Trial.otf);
+}
+@font-face {
+    font-family: "GT America RegularH2";
+    src: url(src/fonts/GT-America/GT-America-Condensed-Regular-Trial.otf);
+}
+@font-face {
+    font-family:  "GT America RegularP";
+    src: url(src/fonts/GT-America/GT-America-Standard-Regular-Trial.otf);
+}
+body{
+    margin: 0;
+    width: 100vw;
+} 
+h1{
+    font: 600 3.3rem "GT America RegularH1";
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+h2{
+    font: 500 1.5rem "GT America RegularH2";
+    letter-spacing: 1px;
+    display: inline;
+}
+p,a{
+    font: normal 1.2rem "GT America RegularP";
+}
+header{
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 5px 50px;
+}
+#headerLeft{
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+#headerLeft > a{
+    border-left: 2px solid var(--white);
+    padding-left: 10px;
+    color: var(--white);
+    text-decoration: none;
+}
+#headerLeft > a:hover{
+    text-decoration: underline;
+}
+#logo{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    transition: all 0.5s ease;
+}
+#logo:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+#logo > img{
+    width: 40px;
+    height: 40px;
+}
+.headerRight{
+    display: flex;
+    gap: 20px;
+}
+.bt{
+    border: 1px solid var(--white);
+    background-color: var(--black);
+    color: var(--white);
+    padding: 5px 20px;
+    border-radius: 8px;
+    font: 500 1rem "GT America RegularH2";
+}
+.bt:hover{
+    cursor: pointer;
+}
+.dois{
+    border: none;
+    background-color: var(--blue);
+    transition: all 0.5s ease;
+}
+.dois:hover{
+    background-color: var(--white);
+    color: var(--black);
+}
+.resul{
+    display: none;
+}
+section{
+    height: 330px;
+    background-color: var(--light-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.search-container {
+  position: relative;
+}
+.search-box {
+    width: 600px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    font: 300 1rem "GT America RegularH2";
+}
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  background-image: url('src/img/seta.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+.search-box:hover{
+    border: 1px solid var(--blue);
+}
+#container{
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+}
+#container > ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 50px;
+    padding-left: 0;
+}
+#container > ul > li{
+    margin: auto;
+    width: 350PX;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+#container > ul > li > img{
+    width: 88px;
+    height: 88px;
+}
+.text > h2{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.text > a{
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 1rem;
+}
+.text > a:hover{
+    text-decoration: underline;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--white);
+    background-color: var(--black);
+    padding: 25px;
+    gap: 30px;
+}
+#articles{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 100px;
+    flex: 1;
+}
+#articles > article > ul{
+    font: normal 0.8rem "GT America RegularP";
+    list-style: none;
+}
+#atribuicao{
+    display: flex;
+    flex-direction: column;
+}
+#atribuicao > img{
+    width: 40px;
+    height: 40px;
+}
+@media (max-width: 885px) {
+    header{
+        padding: 5px 25px;
+    }
+    .search-box{
+        width: 80vw;
+    }
+    #container > ul > li{
+        width: 90%;
+    }
+    #articles{
+        gap: 20px;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    h2{
+        font-size: 1.3rem;
+    }
+    .compl{
+        display: none;
+    }
+    .resul{
+        display: flex;
+    }
+}
+@media (max-width: 385px) {
+    header{
+        padding: 5px 15px;
+    }
+    h1{
+        font-size: 2.2rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+}
