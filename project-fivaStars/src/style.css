@@ -1,7 +1,27 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+body{
+    width: 98vw;
+    height: 94vh;
+    background-color: #E6E9FB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-/* write your CSS here */
+main{
+    width: 711px;
+    height: 330px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 64px;
+    text-align: center;
+    font: normal 1rem "Arial";
+}
+#stars{
+    list-style: none;
+    margin: 32px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+#stars:hover{
+    cursor: pointer;
+}
