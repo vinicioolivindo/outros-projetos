@@ -11,33 +11,56 @@
     --color-primary: #e60012;
     --color-secondary: #0b2b6b;
     --color-bg: #d6f0fa;
+    --color-br-2: #f8f8f8;
     --color-grey: #efefef;
     --white: #fff;
+    --color-gray-light: #727272;
     --color-grey-dark: #434242;
     --color-icon: #484848;
 
+
+    --display: display:flex;
     font-size: 62.5%;
 }
 
-html, body, input, select{
-    font: normal 1.6rem "Open Sans";
+html, body, input, select, a{
+    font: 300 1.6rem "Open Sans";
     color: #434242;
 }
 
+body::before{
+    content: '';
+    width: 100%;
+    height: 650px;
+    background-color: var(--color-bg);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 header{
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
     display: grid;
     grid-template-areas: 
     "left right"
-    "options options";
+    "options options"
+    "more more";
     border-bottom: 1px solid var(--color-grey);
+    background-color: var(--white);
+}
+
+h4{
+    font-size: 1.4rem;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
 }
 
 .left-side{
-    display: flex;
-    align-items: center;
     grid-area: left;
 }
 
@@ -56,21 +79,10 @@ header{
     padding: 1rem 0;
 }
 
-.left-side .search-camp form{
-    display: flex;
-    align-items: center;
-    gap: .8rem;
-}
-
 .left-side .search-camp form input{
     border: none;
     font-size: 1.4rem;
     font-weight: 600;
-}
-
-select, option{
-    border: none;
-    outline: none;
 }
 
 .right-side{
@@ -79,18 +91,15 @@ select, option{
 }
 
 .right-side ul{
-    display: flex;
     padding: 0 2.0rem;
-    align-items: center;
     gap: 2.8rem;
     list-style: none;
 }
 
-.right-side ul li a{
-    display: flex;
-    align-items: center;
-    gap: .8rem;
+.right-side ul li a, .select, .options, .more-information{
+    justify-content: center;
     text-decoration: none;
+    list-style: none;
 }
 .color{
     color: var(--color-icon);
@@ -99,6 +108,7 @@ select, option{
 
 .color:hover{
     color: var(--color-primary);
+    cursor: pointer;
 }
 
 .right-side ul img{
@@ -107,9 +117,53 @@ select, option{
     border-radius: .3rem;
 }
 
-@supports (-webkit-appearance: none) and (stroke-color: transparent) {
-    select {
-      border: none;
-      outline: none;
-    }
-  }
+.options{
+    grid-area: options;
+    width: 100%;
+    padding: 1.2rem;
+    gap: 2rem;
+    border: 1px solid var(--color-grey);
+}
+
+.more-information{
+   grid-area: more;
+   background-color: var(--color-br-2);
+}
+
+.more-information ul, .more-information ul li{
+    padding: .5rem 1.5rem;
+}
+
+.more-information ul li{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.more-information ul li + li{
+    border-left: 1px solid black;
+}
+
+main .card-game{
+    max-width: 124.0rem;
+    margin: 0px auto;
+    transform: translateY(2em);
+    padding: 2rem 3rem;;
+    height: 100px;
+    background-color: var(--white);
+    border-radius: 1.6rem;
+    box-shadow: rgba(60, 64, 89, 0.15) 0px 4px 16px 0px;
+}
+
+.origin ul{
+    font-size: 1.3rem;
+    font-weight: 700;
+    list-style: none;
+    gap: 1rem;
+    color: var(--color-gray-light);
+    cursor: pointer;
+}
+
+.origin ul li span{
+    color: var(--color-icon);
+    cursor: auto;
+}
