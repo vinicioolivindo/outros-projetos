@@ -148,7 +148,6 @@ main .card-game{
     margin: 0px auto;
     transform: translateY(2em);
     padding: 2rem 3rem;;
-    height: 100px;
     background-color: var(--white);
     border-radius: 1.6rem;
     box-shadow: rgba(60, 64, 89, 0.15) 0px 4px 16px 0px;
