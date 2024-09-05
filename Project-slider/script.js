@@ -1,16 +1,24 @@
-let count = 1;
-document.getElementById('radio1').checked = true;
+document.addEventListener('DOMContentLoaded', function() {
+    const nextBtn = document.querySelector('.nav-btn.next');
+    const prevBtn = document.querySelector('.nav-btn.prev');
+    const radios = document.querySelectorAll('input[name="radio-btn"]');
 
-setInterval( function(){
-    nextImage();
-}, 4000)
+    let currentIndex = 0;
 
-function nextImage(){
-    count++;
-    if(count>4){
-        count =1;
-    }
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % radios.length;
+        radios[currentIndex].checked = true;
+    });
 
-    document.getElementById('radio' + count).checked = true;
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + radios.length) % radios.length;
+        radios[currentIndex].checked = true;
+    });
 
-}
+    // Atualizar currentIndex quando os rádios são selecionados manualmente
+    radios.forEach((radio, index) => {
+        radio.addEventListener('change', () => {
+            currentIndex = index;
+        });
+    });
+});
