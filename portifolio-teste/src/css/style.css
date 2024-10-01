@@ -18,19 +18,7 @@ body {
     padding: 30px 15px;
 }
 
-.cabecalho .logo {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    border: 2px solid white;
-    text-decoration: underline;
-    text-align: center;
-    line-height: 55px;
-    font-family: "Raleway", sans-serif;
-    transition: 0.35s;
-}
-
-.cabecalho a:hover .logo {
+.cabecalho a:hover  {
     border: 2px solid #9443d8;
 }
 
@@ -41,6 +29,11 @@ body {
     transition: 0.4s;
 }
 
+.cabecalho .menu ul{
+    display: flex;
+    gap: 5px;
+}
+
 .cabecalho .menu li a:hover {
     background-color: #9443d8;
     color: white;
@@ -49,8 +42,9 @@ body {
 
 .home {
     display: flex;
-    min-height: calc(100vh - 125px);
+    min-height: 100vh;
     align-items: center;
+    justify-content: center;
     gap: 50px;
 
 }
